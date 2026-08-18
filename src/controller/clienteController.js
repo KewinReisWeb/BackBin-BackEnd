@@ -6,7 +6,8 @@ const SECRET_KEY = process.env.JWT_SECRET || "ndskvbjksdvnlkjsdbvljk";
 
 module.exports = {
 
-   // Cadastro
+   // Cadastro // 
+
 async create(req, res) {
 
     try {
@@ -79,7 +80,8 @@ async create(req, res) {
 
 },
 
-    // Login
+    // Login //
+
     async login(req, res) {
 
         try {
@@ -154,7 +156,8 @@ async create(req, res) {
 
     },
 
-    // Listar Clientes
+    // Listar Clientes//
+    
     async searchUsersAll(req, res) {
 
         try {
