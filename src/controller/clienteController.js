@@ -37,7 +37,7 @@ async create(req, res) {
         senha
         }).returning("id");
 
-const clienteId = novoCliente.id;
+        const clienteId = novoCliente.id;
 
         const token = jwt.sign(
             {
@@ -174,7 +174,9 @@ const clienteId = novoCliente.id;
 
     },
 
-    // Buscar por email
+
+    // Buscar por email//
+
     async getByEmail(req, res) {
 
         try {
@@ -211,7 +213,9 @@ const clienteId = novoCliente.id;
 
     },
 
-    // Perfil
+
+    // Perfil //
+
     async profile(req, res) {
 
         try {
@@ -248,7 +252,9 @@ const clienteId = novoCliente.id;
 
     },
 
-    // Atualizar perfil
+
+    // Atualizar perfil//
+
     async updateProfile(req, res) {
 
         try {
@@ -289,7 +295,9 @@ const clienteId = novoCliente.id;
 
     },
 
-    // Excluir conta
+
+    // Excluir conta //
+
     async deleteAccount(req, res) {
 
         try {

@@ -32,7 +32,7 @@ module.exports = (req, res, next) => {
 
         const decoded = jwt.verify(token, SECRET_KEY);
 
-        // Disponibiliza o ID do usuário para os controllers
+        // Disponibiliza o ID do usuário para os controllers//
         req.userId = decoded.idUser;
 
         next();

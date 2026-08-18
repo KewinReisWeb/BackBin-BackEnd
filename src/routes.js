@@ -8,52 +8,25 @@ const authorization = require("./middleware/authorization");
 const routes = express.Router();
 
 
-// ==========================
-// Cliente
-// ==========================
+//Rotas do Clinete//
 
-// Cadastro
-routes.post("/cliente", clienteController.create);
-
-// Login
-routes.post("/cliente/login", clienteController.login);
-
-// Listar clientes
-routes.get("/cliente", authorization, clienteController.searchUsersAll);
-
-// Perfil
-routes.get("/cliente/profile", authorization, clienteController.profile);  
-
-// Buscar cliente por e-mail
-routes.get("/cliente/:email", authorization, clienteController.getByEmail);
-
-// Atualizar perfil
-routes.put("/cliente/profile", authorization, clienteController.updateProfile);
-
-// Excluir conta
-routes.delete("/cliente/profile", authorization, clienteController.deleteAccount);
+routes.post("/cliente", clienteController.create);   //Cadastro//
+routes.post("/cliente/login", clienteController.login);   //Login//
+routes.get("/cliente", authorization, clienteController.searchUsersAll);   // Listar clientes//
+routes.get("/cliente/profile", authorization, clienteController.profile);   // Perfil// 
+routes.get("/cliente/:email", authorization, clienteController.getByEmail);   // Buscar cliente por e-mail//
+routes.put("/cliente/profile", authorization, clienteController.updateProfile);   // Atualizar perfil//
+routes.delete("/cliente/profile", authorization, clienteController.deleteAccount);   // Excluir conta//
 
 
-// ==========================
-// Receitas e Despesas
-// ==========================
 
-// Criar movimentação
-routes.post("/receita", authorization, receitaController.create);
+// Receitas e Despesas//
 
-// Listar movimentações
-routes.get("/receita", authorization, receitaController.list);
-
-// Buscar por ID
-routes.get("/receita/:id", authorization, receitaController.show);
-
-// Atualizar movimentação
-routes.put("/receita/:id", authorization, receitaController.update);
-
-// Excluir movimentação
-routes.delete("/receita/:id", authorization, receitaController.delete);
-
-// Dashboard Financeiro
-routes.get("/dashboard", authorization, receitaController.dashboard);
+routes.post("/receita", authorization, receitaController.create);   // Criar movimentação//
+routes.get("/receita", authorization, receitaController.list);    // Listar movimentações//
+routes.get("/receita/:id", authorization, receitaController.show);   // Buscar por ID//
+routes.put("/receita/:id", authorization, receitaController.update);   // Atualizar movimentação//
+routes.delete("/receita/:id", authorization, receitaController.delete);  // Excluir movimentação//
+routes.get("/dashboard", authorization, receitaController.dashboard);   // Dashboard Financeiro//
 
 module.exports = routes;

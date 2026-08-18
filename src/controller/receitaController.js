@@ -2,9 +2,9 @@ const knex = require("../database");
 
 module.exports = {
 
-    // ==========================
-    // Criar Receita ou Despesa
-    // ==========================
+    
+    // Criar Receita ou Despesa//
+
     async create(req, res) {
 
         try {
@@ -39,7 +39,7 @@ module.exports = {
 
      const [novaReceita] = await knex("receitas")
     .insert({ cliente_id: userId, descricao, valor, tipo, categoria, data })
-    .returning("id"); // no Postgres é obrigatório pedir o retorno explicitamente
+    .returning("id");  // Retorno pro Postgres// 
 
 return res.status(201).json({
     mensagem: "Movimentação cadastrada com sucesso.",
@@ -56,9 +56,9 @@ return res.status(201).json({
 
     },
 
-    // ==========================
-    // Listar movimentações
-    // ==========================
+    
+    // Listar movimentações //
+
     async list(req, res) {
 
         try {
@@ -83,9 +83,9 @@ return res.status(201).json({
 
     },
 
-    // ==========================
-    // Buscar movimentação
-    // ==========================
+    
+    // Buscar movimentação//
+    
     async show(req, res) {
 
         try {
@@ -119,9 +119,9 @@ return res.status(201).json({
 
     },
 
-    // ==========================
-    // Atualizar movimentação
-    // ==========================
+    
+    // Atualizar movimentação//
+
     async update(req, res) {
 
         try {
@@ -165,9 +165,9 @@ return res.status(201).json({
 
     },
 
-    // ==========================
-    // Excluir movimentação
-    // ==========================
+    
+    // Excluir movimentação//
+    
     async delete(req, res) {
 
         try {
@@ -205,9 +205,9 @@ return res.status(201).json({
 
     },
 
-    // ==========================
-    // Dashboard Financeiro
-    // ==========================
+    
+    // Dashboard Financeiro //
+    
     async dashboard(req, res) {
 
         try {

@@ -6,7 +6,7 @@ module.exports = {
 
         connection: {
             connectionString: process.env.DATABASE_URL,
-            ssl: { rejectUnauthorized: false }, // a Neon exige SSL
+            ssl: { rejectUnauthorized: false },
         },
 
         migrations: {
